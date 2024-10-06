@@ -9,6 +9,6 @@ students = [
     {"name" : "Draco", "house" : "Slytherin", "patronus" : None}
 ]
 
-for student in students:        #iterates over every single item in the variable students
+for student in students:        #iterates over every single item in the "students" variable
     print(student["name"], student["house"], student["patronus"], sep=", ")
 

@@ -1,7 +1,15 @@
-""" Defining a function to call another function can be beneficial because now the functions can be organized in whatever position needed and do not need to be necessarily written before they are called. That means, the hello function can be written and placed above the main function and when we call the main function which then calls the hello function, it will still work fine. """
+"""This function accepts an input from the user and prints a positive statement is the desired input is given and vice versa. The try/except block is used in occasions where we want to catch any kind of errors or exceptions."""
+def main():
+    try:
+        x = int(input("What is x?\n"))
+    except ValueError:      #if something goes wrong, this code is executed
+        print("Please provide an integer as input. Try again.")
+    else:           #else statement catches on the attention of the code after line 4 is positive.
+        print(f"x is {x}")
 
 
 
+<<<<<<< HEAD
 
 #This function asks for an input from the user and calls the function "hello() which accepts one parameter"
 def input():   
@@ -25,3 +33,6 @@ def print_row(row="cmon"):
     
 main()
 
+=======
+main()
+>>>>>>> 7697ddbea8f8b8e55cf21b41a585e8ba4a18fa2b
