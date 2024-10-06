@@ -26,10 +26,11 @@ def check():
 
 
 def validate_input(name):
-    """Checks whether an input is alphanumceric or not and returns the argument"""
+    """Checks whether an input is alphanumceric or not and returns the argument. This function implicitly returns "None" value otherwise."""
         
     if name.isalpha():
         return name
+    
     
 
 def main():
@@ -38,13 +39,13 @@ def main():
     It has some layers. 
     The first layer creates an infinite loop.
     The second layer uses the try/except block to catch any errors that might occur. It is quite general but it is a precautio against crashing the program.
-    So the infinite loop contains the second layer. """
+    So the infinite loop contains the second layer. The except statement actually is redundant as it doesn't capture anything."""
     
     while True:
         try:
             x = input("What is your name? ")
             
-            if validate_input(x):
+            if validate_input(x):           #Here the if statement is triggered when this function is true. If this function is true, it returns the argument as defined in the function
                 print(f"Welcome to the program {x}!")
                 break
             else:
