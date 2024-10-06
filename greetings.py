@@ -1,46 +1,57 @@
-"""Code created by GPT-4"""
-
-# def validate_input(name):
-#     if not isinstance(name, str):
-#         return "It is not a string, so can't proceed further. Sorry."
-    
-#     elif len(name) == 0:
-#         return "This is an empty string."
-    
-#     elif name.isalpha():
-#         return "This is a non-empty alphabetic string. ✅"
-    
-#     else: 
-#         return "This is a non-empty string, but it is not alphabetic."
-
-# print(validate_input("Maruf"))
-# print(validate_input("000"))
-# print(validate_input(000))
-# print(validate_input(""))
-
-# def validate_input():
-#     while True:
-#         name = input("Enter your name: ")
         
-#         # Check if the input is a non-empty, alphabetic string
-#         if isinstance(name, str) and name.isalpha() and len(name) > 0:
-#             print("This is a non-empty, alphabetic string. ✅")
-#             break  # Exit the loop if the input is valid
-#         else:
-#             print("Invalid input. Please enter a non-empty, alphabetic string.")
-
-# Call the function to start the validation process.
 
 
-def validate_input():
+"""This function checks whether the input from the user is a string or not.
+
+    Returns:
+        Greetings: If the input is a string
+        Correction: Prompts the user to input a valid name.
+        
+"""
+def check():
+    
+    
+    name = input("What is your name? ")
+    while not name.isalpha():
+        print("It is not a valid name. Please try again.")
+        continue
+    else: 
+        print(f"Welcome {name}!")
+        
+# The foundation of the code to validate an input by the user
+""" 1. Ask for an input from the user
+    2. Check whether the input contains alphanumeric or not.
+    3. Print greetings if validated. Otherwise reprompt.
+"""
+
+
+def validate_input(name):
+    """Checks whether an input is alphanumceric or not and returns the argument"""
+        
+    if name.isalpha():
+        return name
+    
+
+def main():
+    
+    """This function checks for an input which is alphanumeric. If not, it loops back into prompting.
+    It has some layers. 
+    The first layer creates an infinite loop.
+    The second layer uses the try/except block to catch any errors that might occur. It is quite general but it is a precautio against crashing the program.
+    So the infinite loop contains the second layer. """
+    
     while True:
-        name = input("What is your name?\n")
-        if name.isalpha():
-            return print ("This is a non-empty alphabetic string.")
-        else:
-            print("Please enter a valid name with only alphabetic characters.")
-
-# Call the function
-validate_input()
-
-#test from HP
+        try:
+            x = input("What is your name? ")
+            
+            if validate_input(x):
+                print(f"Welcome to the program {x}!")
+                break
+            else:
+                print(f"Please input a correct prompt.") 
+                    
+        except:
+            print(f"There has been error. Please do it again.")
+            
+    
+main()

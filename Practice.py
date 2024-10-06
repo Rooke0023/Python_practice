@@ -4,7 +4,7 @@
 
 
 #This function asks for an input from the user and calls the function "hello() which accepts one parameter"
-def main():   
+def input():   
     name = input(f"What is your name?\n")
     hello(name)
     
@@ -13,4 +13,15 @@ def main():
 def hello(x):   
     print(f"Hello {x}!")
    
+
+#This function calls the print_row function which takes in one parameter
+def main():
+    print_row()
+    
+#This function generates a sequence of # symbols corresponding to the argument given to its parameter.
+def print_row(row="cmon"):
+    print("#", "@", "$" * row, sep="!")
+    
+    
+main()
 
