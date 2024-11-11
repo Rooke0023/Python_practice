@@ -14,4 +14,6 @@ def meow(n):
     for _ in range(n):
         print("meow")
     
-main()
+#The __name__ variable is implicitly set for any module to be "__main__" when it is called from a terminal. When we import the module into another program, the variable then gets changed to the name of the module, i.e.Input_loop. So using this conditional makes it possible for us to import different elements inside this module separately without executing the main() function. Because, when we import this module into another program, this conditional becomes false.
+if __name__=="__main__":
+    main()
